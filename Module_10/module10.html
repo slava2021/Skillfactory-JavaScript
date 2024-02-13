@@ -1,0 +1,109 @@
+<script>
+    //Задание 1
+    let number = +prompt("Введите число");
+    let res;
+
+    if (typeof (number) === "number" && Boolean(number)) {
+        res = number % 2 === 0 ? "Odd" : "Even";
+    } else {
+        res = "Упс, кажется, вы ошиблись";
+    }
+
+    console.log(res);
+
+    //Задание 2
+
+    let x = false;
+
+    switch (typeof (x)) {
+        case "number":
+            console.log("number");
+            break;
+        case "string":
+            console.log("string");
+            break;
+        case "boolean":
+            console.log("boolean");
+            break;
+        default:
+            console.log("Тип x не определён");
+    }
+
+    //Задание 3
+    let str = "hello";
+    //Преобразуем строку в массив,меняем порядок элементов в массиве, преобразуем массив в строку без пробелов, т.е. удаляем запятые
+    let newStr = str.split('').reverse().join('');
+
+    console.log(newStr);
+
+    //Задание 4
+    console.log(Math.floor(Math.random() * 100 + 1));
+
+    //Задание 5
+    let arr = [2, 14, 23, 15];
+
+    let sum = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+        sum += arr[i];
+    }
+
+    console.log("Сумма масива: " + sum);
+
+    //Задание 6
+
+    let arr = [3, 3, 12, 3];
+    let res;
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                res = "true";
+            } else {
+                res = "false";
+            }
+        }
+    }
+
+    console.log(res);
+
+    //Задание 7
+
+    let arr = [4, 3, 0, 3];
+    let res;
+    let oddCounter = 0;
+    let evenCounter = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (+arr[i] && typeof (arr[i]) == "number" && arr[i] !== 0) {
+
+            res = arr[i] % 2 === 0 ? "Odd" : "Even";
+            if (res === "Odd") {
+                oddCounter++;
+            } else {
+                evenCounter++;
+            }
+            console.log(res);
+        } else {
+            console.log(`Выводим нулевой элемент = ${arr[i]}`);
+        }
+    }
+
+    console.log(`Кол-во: четных ${oddCounter} и нечетных ${evenCounter}`)
+
+    //Задание 8
+    let cars = new Map([
+        ["wv", "red"],
+        ["toyota", "black"],
+        ["bmw", "white"]
+    ]);
+
+    for (let key of cars.keys()) {
+        console.log(`Ключ: ${key}`);
+    }
+
+    for (let value of cars.values()) {
+        console.log(`Значение: ${value}`)
+    }
+</script>
